@@ -1,0 +1,38 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.card-body {
+  min-height: 0px;
+}
+.form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.list-item {
+  color: rgb(101, 101, 255);
+}
+.list-group-item {
+  border: none;
+}
+.under-list-item {
+  font-size: 0.9rem;
+}
+.under-list-item .list-group-item {
+  color: rgb(78, 78, 78);
+}
+
+.under-list-input input {
+  height: calc(1em + 0.75rem);
+}
+
+.line-throught {
+  text-decoration: line-through;
+}
