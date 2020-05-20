@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <script
+      src="https://kit.fontawesome.com/9c206210e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container mx-auto p-5 row">
+      <div class="task-add-box my-3 col-12 col-lg-4 order-lg-3">
+        <div class="card">
+          <div class="card-header"><h5>Add New Task</h5></div>
+          <div class="card-body px-4">
+            <form id="addingForm" class="form-group row" action="">
+              <input
+                class="form-control col-10 col-md-11 col-lg-10"
+                type="text"
+                placeholder="Enter a task"
+              />
+              <button
+                type="submit"
+                class="btn btn-outline-success col-2 col-md-1 col-lg-2"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="space col-0 col-lg-1 order-lg-2"></div>
+
+      <div class="list-box my-3 col-12 col-lg-7 order-lg-1">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="float-left">To Do List</h5>
+            <a
+              href=""
+              id="delAll"
+              class="float-right btn btn-outline-danger rounded"
+            >
+              Delete All
+            </a>
+          </div>
+          <div class="card-body p-0">
+            <ul id="mainList" class="list-group">
+              <div id="accordion">
+                <li id="upperLi" class="list-group-item d-none">
+                  <a
+                    href="#collapse0"
+                    class="card-link list-item line-throught"
+                    data-toggle="collapse"
+                  >
+                    <!--Text Here-->
+                  </a>
+
+                  <a
+                    href="#"
+                    class="delete-item text-danger float-right fas fa-times mt-1 mx-1"
+                  ></a>
+                  <a
+                    href="#"
+                    class="check text-success float-right fas fa-check mt-1 mx-4"
+                  ></a>
+                  <div id="collapse0" class="collapse" data-parent="#accordion">
+                    <div class="under-list-item">
+                      <ul class="list-group">
+                        <li id="innerLi" class="list-group-item">
+                          <span class="m-0 p-0"><!--Text Here--></span>
+                          <a
+                            href="#"
+                            class="d-none delete-inner-item text-danger float-right fas fa-times mt-1 mx-1"
+                          ></a>
+                          <a
+                            href="#"
+                            class="d-none inner-check text-success float-right fas fa-check mt-1 mx-4"
+                          ></a>
+                        </li>
+                        <div class="mt-2 under-list-input px-4">
+                          <form action="" class="form-group row">
+                            <input
+                              class="form-control col-10 col-md-11"
+                              type="text"
+                              placeholder="Enter Subtask"
+                            />
+                            <button
+                              type="submit"
+                              class="btn-add-inner-task btn btn-primary col-2 col-md-1 p-0"
+                            >
+                              <i class="i-add-inner-task fas fa-plus"></i>
+                            </button>
+                          </form>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script2.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
