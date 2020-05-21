@@ -76,7 +76,7 @@ function addNewItem(e) {
 
 //to add Inner Tasks
 function addInnerTask(upperText, mainText, check) {
-  //to clone inner visible li in html page
+  //to clone inner visible li from html page
   let tempLi = innerLi.cloneNode(true);
   tempLi.setAttribute("id", "");
 
@@ -105,7 +105,7 @@ function addInnerTask(upperText, mainText, check) {
     }
   }
 
-  //addin inner to upper
+  //adding inner to upper
   tempList.lastElementChild.firstElementChild.firstElementChild.insertBefore(
     tempLi,
     tempList.lastElementChild.firstElementChild.firstElementChild
@@ -120,7 +120,17 @@ function taskStufs(e) {
   if (e.target.classList.contains("delete-item")) {
     //remove LS
 
-    saveLS(e.target.parentElement.children[0].innerText, 0);
+    const text = e.target.parentElement.children[0].innerText;
+    saveLS(text, 0);
+
+    //remove inner tasks of it
+    let tempInnerList = JSON.parse(localStorage.getItem("innerTasks"));
+
+    tempInnerList.forEach(function (item) {
+      if (text == item.upperTaskText) {
+        saveInnerTasks(item.mainText, 0, text);
+      }
+    });
 
     //remove from page
     e.target.parentElement.remove();
@@ -342,10 +352,10 @@ function saveInnerTasks(item, index, upperText = "") {
     tmp.forEach(function (e, ind) {
       if (e.mainText == item && e.upperTaskText == upperText) {
         c = ind;
-        c = true;
+        cont = true;
       }
     });
-    if (c) {
+    if (cont) {
       tmp.splice(c, 1);
       localStorage.setItem("innerTasks", JSON.stringify(tmp));
     }
