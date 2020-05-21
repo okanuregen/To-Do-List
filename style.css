@@ -1,11 +1,7 @@
 html {
   font-size: 15px;
 }
-@media (max-width: 500px) {
-  html {
-    font-size: 12px;
-  }
-}
+
 body {
   background: -webkit-gradient(
       linear,
